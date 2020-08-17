@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.ImageActivity"
+    android:background="@color/colorWhite">
+    <LinearLayout
+        android:id="@+id/search_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/scale_5dp"
+        android:layout_marginStart="@dimen/scale_5dp"
+        android:layout_marginEnd="@dimen/scale_5dp"
+        android:background="@android:drawable/dialog_holo_light_frame">
+        <SearchView
+            android:id="@+id/images_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:iconifiedByDefault="false"
+            android:elevation="@dimen/scale_10dp"
+            android:queryHint="@string/search_photos"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/grid_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_view_container">
+        <RadioGroup
+            android:id="@+id/radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="@dimen/scale_5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true">
+            <RadioButton
+                android:id="@+id/selected_radio_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2"/>
+            <RadioButton
+                android:id="@+id/selected_radio_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3"/>
+            <RadioButton
+                android:id="@+id/selected_radio_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4"/>
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/grid_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/scale_5dp"
+            android:layout_marginBottom="@dimen/scale_5dp"
+            android:layout_marginStart="@dimen/scale_10dp"
+            android:layout_centerVertical="true"
+            android:paddingTop="@dimen/scale_5dp"
+            android:paddingBottom="@dimen/scale_5dp"
+            android:src="@drawable/ic_action_grid" />
+
+        <TextView
+            android:id="@+id/grid_count_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/grid_to_show"
+            android:layout_toEndOf="@id/grid_iv"
+            android:layout_alignTop="@id/grid_iv"
+            android:layout_marginStart="@dimen/scale_10dp"
+            android:textSize="@dimen/scale_16sp"
+            android:textColor="@color/textColorSecondary"
+            android:layout_alignBottom="@id/grid_iv"
+            android:gravity="center_vertical"/>
+    </RelativeLayout>
+
+   <androidx.core.widget.NestedScrollView
+       android:id="@+id/nested_scroll_view"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@id/grid_container">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/images_recycler"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:nestedScrollingEnabled="false"
+           />
+   </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SafePix</string>
+    <string name="search_photos">Search for photos</string>
+    <string name="ok">ok</string>
+    <string name="grid_to_show">No. of columns in the grid: %s</string>
+    <string name="image_transition">imageTransition</string>
+    <string name="no_network">Seems like you are not connected to the network. Here are a few images you previously searched for.</string>
+</resources>
